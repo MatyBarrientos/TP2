@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    {% extends "core/base.html" %} {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Index *Visite Bariloche*</title>
+  </head>
+  {% block content %}
+  <body>
+    <main>
+      <div class="contenedor-main">
+        <h1>Visite Bariloche</h1>
+        <p>Proyecto Web Integrador HTML,CSS y JavaScript</p>
+
+        <a href="{%url 'historia'%}" target="_self" tabindex="-1"
+          >Conocer un poco la historia</a
+        >
+      </div>
+      <img src='{% static "core/img/Bariloche3.webp" %}' />
+    </main>
+  </body>
+  {% endblock %}
+</html>

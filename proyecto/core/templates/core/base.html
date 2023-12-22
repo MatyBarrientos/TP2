@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href='{% static "core/css/style.css" %}' />
+    <link rel="stylesheet" href='{% static "core/css/style_index.css" %}' />
+    <link rel="stylesheet" href='{% static "core/css/style_histo.css" %}' />
+    <link rel="stylesheet" href='{% static "core/css/style_to-do.css" %}' />
+    <link rel="stylesheet" href='{% static "core/css/style_contact.css" %}' />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    {% comment "" %} cabecera y pie de pagina {% endcomment %}
+    <header class="main-header">
+      <nav class="main-nav">
+        <div class="logo">
+          <span>Turismo Bariloche</span>
+        </div>
+
+        <button onclick="toggleNav()" class="menu-toggle">☰</button>
+        <ul class="nav-link">
+          <li><a href="{%url 'index'%}">Inicio</a></li>
+          <li><a href="{%url 'historia'%}">Historia</a></li>
+          <li><a href="{%url 'ToDo'%}">¿Qué Hacer?</a></li>
+          <li><a href="{%url 'contacto'%}">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    {%block content%}{%endblock%}
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="#">
+              <img
+                src='{% static "core/img/logo1.png" %}'
+                alt="Logo Bariloche"
+              />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>About Us</h2>
+          <p>Proyecto Web Coco a Codo 23515</p>
+        </div>
+
+        <div class="box">
+          <h2>Redes Sociales</h2>
+          <div class="red-social">
+            <a href="https://www.facebook.com/BarilochePatagoniaArgentina/"
+              ><img
+                src='{% static "core/img/icons/nan-bar/facebook.png"%}'
+                alt="Facebook"
+            /></a>
+            <a href="https://www.instagram.com/barilochear/"
+              ><img
+                src='{% static "core/img/icons/nan-bar/instagram.png"%}'
+                alt="Instagram"
+            /></a>
+            <a href="https://twitter.com/Bariloche_ar"
+              ><img
+                src='{% static "core/img/icons/nan-bar/twitter.png"%}'
+                alt="Twitter"
+            /></a>
+            <a href="https://www.youtube.com/c/BarilocheArgentina"
+              ><img
+                src='{% static "core/img/icons/nan-bar/youtube.png"%}'
+                alt="YouTube"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small
+          >&copy; 2023 <b>Visite Bariloche</b> - Derechos Reservados.</small
+        >
+      </div>
+    </footer>
+  </body>
+  <script src='{%static "core/js/header.js"%}'></script>
+  <script src='{%static "core/js/script.js"%}'></script>
+</html>
